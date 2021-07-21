@@ -9,7 +9,7 @@ public class Intersections
     /// <summary>
     /// Based on https://gdbooks.gitbooks.io/3dcollisions/content/Chapter2/static_aabb_plane.html
     /// </summary>
-    public static bool BoundPlaneIntersect(Mesh mesh, ref Plane plane)
+    public static bool BoundPlaneIntersect(Mesh mesh, ref Plane plane) /////////////////// Plane > GameObject
     {
         // Compute projection interval radius
         float r = mesh.bounds.extents.x * Mathf.Abs(plane.normal.x) +
@@ -48,7 +48,7 @@ public class Intersections
 
     //Intersect : 현재 사각형과 지정된 사각형이 겹치는 부분을 찾아 결과를 현재 사각형으로 저장합니다.
 
-    public ValueTuple<Vector3, Vector2> Intersect(Plane plane, Vector3 first, Vector3 second, Vector2 uv1, Vector2 uv2)
+    public ValueTuple<Vector3, Vector2> Intersect(Plane plane, Vector3 first, Vector3 second, Vector2 uv1, Vector2 uv2) //////////////Plane > GameObject
     {
         edgeRay.origin = first;
         edgeRay.direction = (second - first).normalized;
@@ -88,6 +88,7 @@ public class Intersections
      *       |___________________
      */
      
+       //////////////////////////////////////// Plane > GameObject
     public bool TrianglePlaneIntersect(List<Vector3> vertices, List<Vector2> uvs, List<int> triangles, int startIdx, ref Plane plane,TempMesh posMesh, TempMesh negMesh, Vector3[] intersectVectors)
     {
         int i;

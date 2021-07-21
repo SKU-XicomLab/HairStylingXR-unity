@@ -45,14 +45,14 @@ public class MeshCutter
     /// Returns posMesh and negMesh, which are the resuling meshes on both sides of the plane 
     /// (posMesh on the same side as the plane's normal, negMesh on the opposite side)
     /// </summary>
-    public bool SliceMesh(Mesh mesh, ref Plane slice)
+    public bool SliceMesh(Mesh mesh, ref Plane slice)    //////////////////////////////Plane > GameObject
     {
 
         // Let's always fill the vertices array so that we can access it even if the mesh didn't intersect
         mesh.GetVertices(ogVertices);
 
         // 1. Verify if the bounds intersect first
-        if (!Intersections.BoundPlaneIntersect(mesh, ref slice))
+        if (!Intersections.BoundPlaneIntersect(mesh, ref slice))  /////////////////////// slice > GameObject
             return false;
 
         mesh.GetTriangles(ogTriangles, 0);
@@ -66,7 +66,8 @@ public class MeshCutter
         // 2. Separate old vertices in new meshes
         for(int i = 0; i < ogVertices.Count; ++i)
         {
-            if (slice.GetDistanceToPoint(ogVertices[i]) >= 0)
+            if (slice.GetDistanceToPoint(ogVertices[i]) >= 0)//////////////////////////////////////////////////////
+            //if(Vector3.Distance(slice.transform.position, ogVertices[i]) >= 0)
                 PositiveMesh.AddVertex(ogVertices, ogNormals, ogUvs, i);
             else
                 NegativeMesh.AddVertex(ogVertices, ogNormals, ogUvs, i);

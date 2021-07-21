@@ -85,8 +85,9 @@ public class MouseSlice : MonoBehaviour {
             slicePlane.SetNormalAndPosition(
                 transformedNormal,
                 obj.transform.InverseTransformPoint(point));
+            Debug.Log("sliceplane : " + slicePlane);
 
-            slicedAny = SliceObject(ref slicePlane, obj, positive, negative) || slicedAny;
+            slicedAny = SliceObject(ref slicePlane, obj, positive, negative) || slicedAny;   /////////////////slicePlane > plane
         }
 
         // Separate meshes if a slice was made
@@ -94,14 +95,16 @@ public class MouseSlice : MonoBehaviour {
             SeparateMeshes(positive, negative, normal);
     }
 
-    bool SliceObject(ref Plane slicePlane, GameObject obj, List<Transform> positiveObjects, List<Transform> negativeObjects)
+    bool SliceObject(ref Plane slicePlane, GameObject obj, List<Transform> positiveObjects, List<Transform> negativeObjects) // Plane > GameObject
     {
         var mesh = obj.GetComponent<MeshFilter>().mesh;
 
         if (!meshCutter.SliceMesh(mesh, ref slicePlane))
         {
+            //Debug.Log("slicePlane.GetDistanceToPoint" + slicePlane.GetDistanceToPoint(meshCutter.GetFirstVertex()));
             // Put object in the respective list
             if (slicePlane.GetDistanceToPoint(meshCutter.GetFirstVertex()) >= 0)
+            //if((Vector3.Distance(slicePlane.transform.position, meshCutter.GetFirstVertex())) >= 0) ///////////////////////////////////
                 positiveObjects.Add(obj.transform);
             else
                 negativeObjects.Add(obj.transform);
