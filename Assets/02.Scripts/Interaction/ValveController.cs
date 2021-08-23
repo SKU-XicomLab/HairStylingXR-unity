@@ -1,49 +1,26 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using HTC.UnityPlugin.Vive;
 using Valve.VR;
 
 public class ValveController : MonoBehaviour
 {
-    /*void Update()
-    {
-        Ray raycast = new Ray(transform.position, transform.forward);
-        RaycastHit hit;
-
-        if (Physics.Raycast(raycast, out hit))
-        {
-            if (ViveInput.GetPressDown(HandRole.RightHand, ControllerButton.Trigger))
-            {
-                Debug.Log("트리거 누름");
-            }
-
-            if (ViveInput.GetPress(HandRole.RightHand, ControllerButton.Trigger))
-            {
-                Debug.Log("트리거 누르는 중");
-            }
-
-            if (ViveInput.GetPress(HandRole.RightHand, ControllerButton.Trigger))
-            {
-                Debug.Log("트리거 땜");
-            }
-        }
-    }*/
-
     public SteamVR_Action_Vector2 ThumbstickAction = null;
     public SteamVR_Action_Vector2 TrackpadAction = null;
     public SteamVR_Action_Single SqueezeAction = null;
     public SteamVR_Action_Boolean GripAction = null;
-    public SteamVR_Action_Boolean PinchAction = null;
+    public SteamVR_Action_Boolean grabPinch = null;
     public SteamVR_Action_Skeleton SkeletonAction = null;
+
+    public SteamVR_Input_Sources handType;
 
     private void Update()
     {
         //Thumbstick();
-        Trackpad();
+        //Trackpad();
         //Squeeze();
         //Grip();
-        //Pinch();
+        Pinch();
         //Skeleton();
     }
 
@@ -73,12 +50,18 @@ public class ValveController : MonoBehaviour
 
     private void Grip()
     {
+        if (GripAction.active == false)
+            return;
 
+        print("Grip: " + GripAction.active);
     }
 
     private void Pinch()
     {
-
+        if (grabPinch.GetState(handType))
+        {
+            Debug.Log("트리거 누르는 중");
+        }
     }
 
     private void Skeleton()
