@@ -26,34 +26,22 @@ public class ValveController : MonoBehaviour
 
     private void Thumbstick()
     {
-        if (ThumbstickAction.axis == Vector2.zero)
-            return;
 
-        print("Thumbstick: " + ThumbstickAction.axis);
     }
 
     private void Trackpad()
     {
-        if (TrackpadAction.axis == Vector2.zero)
-            return;
 
-        print("Trackpad: " + TrackpadAction.axis);
     }
 
     private void Squeeze()
     {
-        if (SqueezeAction.axis == 0.0f)
-            return;
 
-        print("Squeeze: " + SqueezeAction.axis);
     }
 
     private void Grip()
     {
-        if (GripAction.active == false)
-            return;
 
-        print("Grip: " + GripAction.active);
     }
 
     private void Pinch()
