@@ -1,5 +1,5 @@
 # HairStylingXR-unity
-> This project is an untact hair training system.
+> This project is a non-contact hair training system.
 <p>
   <a><img src="https://img.shields.io/badge/unity3d-2019.3.5-blue?style=flat-square&logo=unity"></a>
 </p>
