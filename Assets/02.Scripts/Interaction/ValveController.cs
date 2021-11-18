@@ -52,7 +52,7 @@ public class ValveController : MonoBehaviour
     #region Interact
     // 코드 캡슐화, 재사용성 강화
 
-    public void Cut()
+    private void Cut()
     {
         if (ABtn.GetStateDown(handType) && squueze_value > 0.5f) // A 버튼 + 그랩포스 인터렉션, 포스강도 (0.0 ~ 1.0)
         {
@@ -60,7 +60,7 @@ public class ValveController : MonoBehaviour
         }
     }
 
-    public void On_GUI()
+    private void On_GUI()
     {
         if (BBtn.GetStateDown(handType)) // B 버튼 인터렉션
         {
@@ -78,7 +78,7 @@ public class ValveController : MonoBehaviour
         }
     }
 
-    public void InteractUI()
+    private void InteractUI()
     {
         if (interactUI.GetStateDown(handType)) // 트리거 인터렉션
         {
@@ -92,7 +92,7 @@ public class ValveController : MonoBehaviour
     #region Key Mapping
     // 키맵핑시 참고
 
-    /*public void InteractUI() // 트리거
+    /*private void InteractUI() // 트리거
     {
         if (interactUI.GetStateDown(handType))
         {
@@ -100,7 +100,7 @@ public class ValveController : MonoBehaviour
         }
     }
 
-    public void Teleport() // 트랙패드
+    private void Teleport() // 트랙패드
     {
         if (teleport.GetStateDown(handType))
         {
@@ -108,7 +108,7 @@ public class ValveController : MonoBehaviour
         }
     }
 
-    public void ABTN() // A 버튼
+    private void ABTN() // A 버튼
     {
         if (ABtn.GetStateDown(handType))
         {
@@ -116,7 +116,7 @@ public class ValveController : MonoBehaviour
         }
     }
 
-    public void BBTN() // B 버튼
+    private void BBTN() // B 버튼
     {
         if (BBtn.GetStateDown(handType))
         {
@@ -124,7 +124,7 @@ public class ValveController : MonoBehaviour
         }
     }
 
-    public void GrabGrip() // 그랩
+    private void GrabGrip() // 그랩
     {
         if (grabGrip.GetState(handType))
         {
@@ -132,7 +132,7 @@ public class ValveController : MonoBehaviour
         }
     }
 
-    public void GrabGripForce() // 그랩포스
+    private void GrabGripForce() // 그랩포스
     {
         squueze_value = squeeze.GetAxis(handType);
 
