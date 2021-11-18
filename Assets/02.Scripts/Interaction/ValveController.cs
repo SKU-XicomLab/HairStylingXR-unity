@@ -30,9 +30,14 @@ public class ValveController : MonoBehaviour
     // Pinch
     public SteamVR_Action_Boolean grabPinch = null;
 
-    private void Update()
+    public GameObject GUI;
+
+    void Update()
     {
-        InteractUI();
+        Cut();
+        On_GUI();
+
+        /*InteractUI();
         Teleport();
         ABTN();
         BBTN();
@@ -44,7 +49,50 @@ public class ValveController : MonoBehaviour
         SnapTurnLeft();*/
     }
 
-    private void InteractUI() // 트리거
+    #region Interact
+    // 코드 캡슐화, 재사용성 강화
+
+    public void Cut()
+    {
+        if (ABtn.GetStateDown(handType) && squueze_value > 0.5f) // A 버튼 + 그랩포스 인터렉션, 포스강도 (0.0 ~ 1.0)
+        {
+            Debug.Log("Cut");
+        }
+    }
+
+    public void On_GUI()
+    {
+        if (BBtn.GetStateDown(handType)) // B 버튼 인터렉션
+        {
+            if (GUI.activeSelf)
+            {
+                GUI.SetActive(false);
+                Debug.Log("OFF GUI");
+            }
+
+            else
+            {
+                GUI.SetActive(true);
+                Debug.Log("ON GUI");
+            }
+        }
+    }
+
+    public void InteractUI()
+    {
+        if (interactUI.GetStateDown(handType)) // 트리거 인터렉션
+        {
+            Debug.Log("InteractUI");
+        }
+    }
+
+
+    #endregion
+
+    #region Key Mapping
+    // 키맵핑시 참고
+
+    /*public void InteractUI() // 트리거
     {
         if (interactUI.GetStateDown(handType))
         {
@@ -52,7 +100,7 @@ public class ValveController : MonoBehaviour
         }
     }
 
-    private void Teleport() // 트랙패드
+    public void Teleport() // 트랙패드
     {
         if (teleport.GetStateDown(handType))
         {
@@ -60,7 +108,7 @@ public class ValveController : MonoBehaviour
         }
     }
 
-    private void ABTN() // A 버튼
+    public void ABTN() // A 버튼
     {
         if (ABtn.GetStateDown(handType))
         {
@@ -68,7 +116,7 @@ public class ValveController : MonoBehaviour
         }
     }
 
-    private void BBTN() // B 버튼
+    public void BBTN() // B 버튼
     {
         if (BBtn.GetStateDown(handType))
         {
@@ -76,7 +124,7 @@ public class ValveController : MonoBehaviour
         }
     }
 
-    private void GrabGrip() // 그랩
+    public void GrabGrip() // 그랩
     {
         if (grabGrip.GetState(handType))
         {
@@ -84,7 +132,7 @@ public class ValveController : MonoBehaviour
         }
     }
 
-    private void GrabGripForce() // 그랩포스
+    public void GrabGripForce() // 그랩포스
     {
         squueze_value = squeeze.GetAxis(handType);
 
@@ -94,6 +142,7 @@ public class ValveController : MonoBehaviour
         }
     }
 
+    // 일반 컨트롤러
     /*private void ThumbStick()
     {
         if (touch.GetStateDown(handType))
@@ -125,5 +174,5 @@ public class ValveController : MonoBehaviour
             Debug.Log("snapTurnLeft");
         }
     }*/
+    #endregion
 }
-
