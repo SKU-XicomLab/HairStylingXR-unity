@@ -50,7 +50,6 @@ public class ValveController : MonoBehaviour
     }
 
     #region Interact
-    // 코드 캡슐화, 재사용성 강화
 
     private void Cut()
     {
