@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using EzySlice;
+
 public class Slicer : MonoBehaviour
 {
     public Material materialAfterSlice;
@@ -42,6 +43,4 @@ public class Slicer : MonoBehaviour
     {
         return obj.Slice(transform.position, transform.up, crossSectionMaterial);
     }
-
-
 }

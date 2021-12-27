@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR;
+using EzySlice;
 
 public class ValveController : MonoBehaviour
 {
@@ -32,10 +33,15 @@ public class ValveController : MonoBehaviour
 
     public GameObject GUI;
 
+    public Material materialAfterSlice;
+    public LayerMask sliceMask;
+    public bool isTouched;
+
     void Update()
     {
-        Cut();
-        On_GUI();
+        //Cut();
+        //On_GUI();
+        InteractUI();
 
         /*InteractUI();
         Teleport();
@@ -51,7 +57,7 @@ public class ValveController : MonoBehaviour
 
     #region Interact
 
-    private void Cut()
+    public void Cut()
     {
         if (ABtn.GetStateDown(handType) && squueze_value > 0.5f) // A 버튼 + 그랩포스 인터렉션, 포스강도 (0.0 ~ 1.0)
         {
@@ -59,7 +65,7 @@ public class ValveController : MonoBehaviour
         }
     }
 
-    private void On_GUI()
+    public void On_GUI()
     {
         if (BBtn.GetStateDown(handType)) // B 버튼 인터렉션
         {
@@ -77,7 +83,7 @@ public class ValveController : MonoBehaviour
         }
     }
 
-    private void InteractUI()
+    public void InteractUI()
     {
         if (interactUI.GetStateDown(handType)) // 트리거 인터렉션
         {
