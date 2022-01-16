@@ -7,10 +7,15 @@ public class Haptic : MonoBehaviour
 {
 	
     public SteamVR_Action_Vibration hapticAction;
-    
-    public PlayVibration()
+
+    public void Update()
     {
-    	Pulse(1, 150, 75, SteamVR_Input_Sources.LeftHand);
+        PlayVibration();
+    }
+
+    public void PlayVibration()
+    {
+    	//Pulse(1, 150, 75, SteamVR_Input_Sources.LeftHand);
         Pulse(1, 150, 75, SteamVR_Input_Sources.RightHand);
     }
     
