@@ -1,0 +1,155 @@
+fileFormatVersion: 2
+guid: 3ef86b8e606180d40bed02eee4cbbe06
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: abdomenLower
+    100002: abdomenUpper
+    100004: CenterBrow
+    100006: chestLower
+    100008: chestUpper
+    100010: head
+    100012: hip
+    100014: lBrowInner
+    100016: lBrowMid
+    100018: lBrowOuter
+    100020: lCheekUpper
+    100022: lCollar
+    100024: lEar
+    100026: lowerJaw
+    100028: lPectoral
+    100030: neckLower
+    100032: neckUpper
+    100034: pelvis
+    100036: rBrowInner
+    100038: rBrowMid
+    100040: rBrowOuter
+    100042: rCheekUpper
+    100044: rCollar
+    100046: rEar
+    100048: rPectoral
+    100050: Troy
+    100052: Troy.Shape
+    100054: //RootNode
+    100056: upperFaceRig
+    400000: abdomenLower
+    400002: abdomenUpper
+    400004: CenterBrow
+    400006: chestLower
+    400008: chestUpper
+    400010: head
+    400012: hip
+    400014: lBrowInner
+    400016: lBrowMid
+    400018: lBrowOuter
+    400020: lCheekUpper
+    400022: lCollar
+    400024: lEar
+    400026: lowerJaw
+    400028: lPectoral
+    400030: neckLower
+    400032: neckUpper
+    400034: pelvis
+    400036: rBrowInner
+    400038: rBrowMid
+    400040: rBrowOuter
+    400042: rCheekUpper
+    400044: rCollar
+    400046: rEar
+    400048: rPectoral
+    400050: Troy
+    400052: Troy.Shape
+    400054: //RootNode
+    400056: upperFaceRig
+    2100000: Hair
+    2100002: Cap
+    4300000: Troy.Shape
+    9500000: //RootNode
+    13700000: Troy.Shape
+    2186277476908879412: ImportLogs
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 0
+    keepQuads: 0
+    weldVertices: 0
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 0
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 0
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
