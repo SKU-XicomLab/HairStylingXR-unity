@@ -1,0 +1,22 @@
+# 
+# Wavefront material file
+# Converted by the DEEP Exploration  Deep Exploration 5 5.0.5.1846 Release
+# Right Hemisphere, LTD
+# http://www.righthemisphere.com/
+# 
+
+newmtl Hair_Cards_7
+Ka 0.588 0.588 0.588
+Kd 0.588 0.588 0.588
+Ks 1 1 1
+illum 2
+Ns 20
+map_Kd HairCardsDiffuseBlack.jpg
+map_bump HairCardsSpecular.jpg
+bump HairCardsSpecular.jpg
+map_opacity HairCardsAlpha.jpg
+map_d HairCardsAlpha.jpg
+refl 
+map_kS HairCardsSpecular.jpg
+map_kA 
+map_Ns 
