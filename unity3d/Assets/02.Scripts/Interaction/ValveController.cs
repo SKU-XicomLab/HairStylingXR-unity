@@ -1,25 +1,25 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Valve.VR;
-using EzySlice;
+using Valve.VR; //steamVR namespace
+using EzySlice; // mesh 자르는 라이브러리 (cut)
 
 public class ValveController : MonoBehaviour
 {
-    public SteamVR_Input_Sources handType;
+    public SteamVR_Input_Sources handType;  //hand타입 설정
 
-    // Trigger
-    public SteamVR_Action_Boolean interactUI = null;
+    // Trigger  
+    public SteamVR_Action_Boolean interactUI = null; //인터렉션 활성화 
 
     // Trackpad
     public SteamVR_Action_Boolean teleport = null;
 
     // Btn
-    public SteamVR_Action_Boolean ABtn = null;
-    public SteamVR_Action_Boolean BBtn = null;
+    public SteamVR_Action_Boolean ABtn = null; //A button
+    public SteamVR_Action_Boolean BBtn = null; //B button
 
     // Grip
-    float squueze_value;
+    float squueze_value; //그랩 쥐는 강도
     public SteamVR_Action_Single squeeze = null;
     public SteamVR_Action_Boolean grabGrip = null;
 
@@ -31,11 +31,11 @@ public class ValveController : MonoBehaviour
     // Pinch
     public SteamVR_Action_Boolean grabPinch = null;
 
-    public GameObject GUI;
+    public GameObject GUI;  //사용자 인터페이스
 
-    public Material materialAfterSlice;
-    public LayerMask sliceMask;
-    public bool isTouched;
+    public Material materialAfterSlice; //cut한 이후 
+    public LayerMask sliceMask; //LayerMask = raycast 사용중 자신과 타겟사이에 오브젝트가 끼어들어도 계속 타겟에게 ray를 쏘고 싶을때
+    public bool isTouched;  //isTouched 활성화/비활성화
 
     void Update()
     {
@@ -57,27 +57,27 @@ public class ValveController : MonoBehaviour
 
     #region Interact
 
-    public void Cut()
+    public void Cut()  //자르기
     {
         if (ABtn.GetStateDown(handType) && squueze_value > 0.5f) // A 버튼 + 그랩포스 인터렉션, 포스강도 (0.0 ~ 1.0)
         {
-            Debug.Log("Cut");
+            Debug.Log("Cut"); 
         }
     }
 
-    public void On_GUI()
+    public void On_GUI() 
     {
         if (BBtn.GetStateDown(handType)) // B 버튼 인터렉션
         {
-            if (GUI.activeSelf)
+            if (GUI.activeSelf)  //gameobject(GUI) ON상태
             {
-                GUI.SetActive(false);
+                GUI.SetActive(false); //gameobject(GUI) 비활성화
                 Debug.Log("OFF GUI");
             }
 
-            else
+            else //gameobject(GUI) Off상태
             {
-                GUI.SetActive(true);
+                GUI.SetActive(true); //gameobject(GUI) 활성화
                 Debug.Log("ON GUI");
             }
         }
@@ -85,9 +85,9 @@ public class ValveController : MonoBehaviour
 
     public void InteractUI()
     {
-        if (interactUI.GetStateDown(handType)) // 트리거 인터렉션
+        if (interactUI.GetStateDown(handType)) // 트리거 인터렉션 
         {
-            Debug.Log("InteractUI");
+            Debug.Log("InteractUI"); 
         }
     }
 
@@ -97,7 +97,7 @@ public class ValveController : MonoBehaviour
     #region Key Mapping
     // 키맵핑시 참고
 
-    /*private void InteractUI() // 트리거
+    /*private void InteractUI() // 트리거 
     {
         if (interactUI.GetStateDown(handType))
         {
@@ -105,7 +105,7 @@ public class ValveController : MonoBehaviour
         }
     }
 
-    private void Teleport() // 트랙패드
+    private void Teleport() // 트랙패드 
     {
         if (teleport.GetStateDown(handType))
         {
